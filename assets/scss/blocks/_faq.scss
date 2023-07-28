@@ -1,0 +1,133 @@
+.faq {
+	padding: 60px 0 105px;
+	background: url(assets/images/systems-bg.jpg) no-repeat calc(50% - 715px) 35px / 1050px auto;
+
+	@include lg {
+		background-position: 830px bottom;
+		background-size: 800px auto;
+	}
+
+	@include md {
+		padding: 60px 0;
+		background-position: right top;
+		background-size: 240px auto;
+	}
+
+	@include xs {
+		background-size: 170px auto;
+	}
+
+	&__wrapper {
+		max-width: 800px;
+		margin-left: auto;
+
+		@include lg {
+			margin-right: auto;
+			margin-left: 0;
+		}
+
+		@include md {
+			max-width: none;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 55px;
+		margin-top: 50px;
+
+		@include md {
+			margin-top: 75px;
+		}
+
+		@include xs {
+			margin-top: 50px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 50px;
+		border-bottom: 1px solid #b3b3b3;
+
+		@include sm {
+			padding-bottom: 15px;
+		}
+	}
+
+	&__button {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		padding: 0 10px;
+		background-color: transparent;
+		border: none;
+
+		@include sm {
+			gap: 25px;
+		}
+
+		&.active {
+
+			.faq__arrow {
+				transform: rotate(225deg);
+			}
+
+			+ .faq__answer {
+				margin: 15px 10px;
+
+				@include sm {
+					margin: 15px 10px 0;
+				}
+			}
+		}
+	}
+
+	&__mark {
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		color: #fff;
+		font-weight: 700;
+		border-radius: 50%;
+		box-shadow: 0 4px 10px rgba(255, 22, 1, 0.2);
+		@include ui-gradient(90deg);
+	}
+
+	&__question {
+		font-weight: 700;
+		text-align: left;
+	}
+
+	&__arrow {
+		display: block;
+		flex-shrink: 0;
+		width: 20px;
+		height: 20px;
+		margin-bottom: 5px;
+		margin-left: auto;
+		border: solid $primary;
+		border-width: 0 2px 2px 0;
+		transform: rotate(45deg);
+		transition: all 0.5s ease;
+	}
+
+	&__answer {
+		max-height: 0;
+		margin: 0;
+
+		overflow: hidden;
+		line-height: 1.2;
+		transition: all 0.3s ease-out;
+
+		p:last-child {
+			margin: 0;
+		}
+	}
+}

@@ -1,0 +1,198 @@
+.input {
+	width: 100%;
+	min-height: 40px;
+	padding: 0 0 20px;
+	color: #787878;
+
+	font-size: 18px;
+	background: none;
+	border: none;
+	border-bottom: 1px solid #b3b3b3;
+	transition: all 0.3s linear;
+
+	&:hover,
+	&:focus {
+		color: #000;
+		border-color: #000;
+
+		&::placeholder {
+			color: #000;
+		}
+	}
+
+	&::placeholder {
+		color: #787878;
+		font: inherit;
+		transition: all 0.3s linear;
+	}
+}
+
+.select {
+	position: relative;
+
+	&:hover {
+
+		select {
+			border-color: #000;
+		}
+	}
+
+	select {
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+		padding: 0 0 20px;
+		padding-right: 40px;
+		font-size: 18px;
+		background: transparent;
+
+		border: none;
+		border-bottom: 1px solid #b3b3b3;
+		cursor: pointer;
+		transition: all 0.3s linear;
+		appearance: none;
+	}
+
+	&::before {
+		position: absolute;
+		top: 0;
+		right: 5px;
+		width: 15px;
+		height: 15px;
+		border-bottom: 2px solid $primary;
+		border-left: 2px solid $primary;
+		border-radius: 2px;
+
+		transform: rotate(-45deg);
+		content: "";
+		pointer-events: none;
+	}
+}
+
+.radio {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	width: 100%;
+	height: fit-content;
+	font-size: 18px;
+	cursor: pointer;
+
+	span {
+		position: relative;
+		display: block;
+
+		flex: 0 0 24px;
+		height: 24px;
+		background-color: #fff;
+
+		border: 1px solid #b3b3b3;
+		border-radius: 50%;
+	}
+
+	input {
+		display: none;
+	}
+
+	input:checked ~ span::before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 16px;
+		height: 16px;
+		background: $primary;
+
+		border-radius: 50%;
+
+		transform: translate(-50%, -50%);
+		content: "";
+	}
+}
+
+.range {
+	position: relative;
+	width: 100%;
+	min-height: 65px;
+
+	.range-from,
+	.range-to {
+		position: absolute;
+		bottom: 0;
+		font-size: 18px;
+	}
+
+	.range-from {
+		left: 0;
+	}
+
+	.range-to {
+		right: 0;
+	}
+
+	.range-slider {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #b3b3b3;
+
+		transform: translateY(-50%);
+		cursor: pointer;
+		appearance: none;
+
+		&::-webkit-slider-thumb,
+		&::-moz-range-thumb {
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+			appearance: none;
+		}
+	}
+
+	.range-select {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		z-index: $ui-index-2;
+		width: 25px;
+		height: 100%;
+		transform: translateX(-50%);
+		pointer-events: none;
+
+		.range-thumb {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			display: block;
+			width: 25px;
+			height: 25px;
+			background: $primary;
+			border-radius: 50%;
+			transform: translateY(-50%);
+		}
+
+		.range-value {
+			position: absolute;
+			bottom: 50px;
+			left: 50%;
+			width: fit-content;
+			height: 20px;
+			font-size: 18px;
+			transform: translateX(-50%);
+		}
+	}
+
+	.range-bar {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		z-index: 0;
+		width: 50%;
+		height: 2px;
+		background: $primary;
+
+		transform: translateY(-50%);
+		pointer-events: none;
+	}
+}

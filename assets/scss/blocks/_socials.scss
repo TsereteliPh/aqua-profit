@@ -1,0 +1,21 @@
+.socials {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	width: fit-content;
+
+	&__link {
+		width: fit-content;
+		height: auto;
+		cursor: pointer;
+		transition: $transition;
+
+		&:hover {
+			transform: translateY(-3px);
+		}
+
+		&:active {
+			opacity: 0.8;
+		}
+	}
+}

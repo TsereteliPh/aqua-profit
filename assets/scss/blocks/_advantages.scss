@@ -1,0 +1,150 @@
+.advantages {
+	padding: 60px 0 115px;
+	overflow: hidden;
+	color: #fff;
+	background: url(assets/images/advantages-bg.jpg) no-repeat 50% 100% / auto;
+
+	@include sm {
+		padding: 60px 0;
+	}
+
+	@include xs {
+		background-position: 40% 100%;
+	}
+
+	&__head {
+		display: flex;
+		justify-content: space-between;
+
+		@include lg {
+			gap: 20px;
+			align-items: center;
+		}
+
+		@include sm {
+			flex-direction: column;
+			gap: 30px;
+			align-items: flex-start;
+		}
+	}
+
+	&__title {
+		color: #fff;
+	}
+
+	&__guarantee {
+		display: flex;
+		gap: 35px;
+		max-width: 450px;
+		margin-right: 190px;
+
+		@include lg {
+			margin-right: 0;
+		}
+
+		@include md {
+			gap: 15px;
+			max-width: 360px;
+		}
+
+		@include xs {
+			align-items: center;
+		}
+	}
+
+	&__guarantee-years {
+		color: transparent;
+		font-weight: 500;
+		font-size: 86px;
+		line-height: 1;
+		-webkit-text-stroke: 2px $secondary;
+	}
+
+	&__guarantee-text {
+		font-weight: 500;
+		font-size: 20px;
+
+		@include xs {
+			font-size: 16px;
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 65px 0;
+		margin-top: 45px;
+		padding-right: 40px;
+
+		@include md {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include xs {
+			grid-template-columns: 1fr;
+			gap: 45px 0;
+		}
+	}
+
+	&__item {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		max-width: 235px;
+
+		@include xs {
+			flex-direction: row;
+			gap: 10px;
+			align-items: center;
+			max-width: none;
+		}
+
+		&:nth-child(3n + 1) {
+
+			&::before {
+				position: absolute;
+				top: 25px;
+				left: 20px;
+				width: 120vw;
+				height: 1px;
+				background-color: rgba(#fff, 0.3);
+				content: "";
+
+				@include xs {
+					display: none;
+				}
+			}
+		}
+
+		&:nth-child(odd) {
+
+			&::before {
+
+				@include md {
+					position: absolute;
+					top: 25px;
+					left: 20px;
+					width: 120vw;
+					height: 1px;
+					background-color: rgba(#fff, 0.3);
+					content: "";
+				}
+
+				@include xs {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__arrow {
+		flex-shrink: 0;
+		user-select: none;
+	}
+
+	&__text {
+		font-size: 20px;
+		line-height: 1.2;
+	}
+}

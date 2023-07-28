@@ -1,0 +1,19 @@
+@mixin ui-link($color) {
+	color: $color;
+	text-decoration: none;
+	transition: all 0.2s ease;
+
+	&:hover {
+		@media (hover: hover) {
+			text-decoration: underline;
+		}
+	}
+
+	&:active {
+		opacity: 0.8;
+	}
+}
+
+@mixin ui-gradient($direction) {
+	background: linear-gradient($direction, $primary 0%, $secondary 100%);
+}

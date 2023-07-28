@@ -1,0 +1,151 @@
+.welcome {
+	position: relative;
+	padding-top: 230px;
+	overflow: hidden;
+	background: url(assets/images/welcome-bg.jpg) no-repeat calc(50% + 255px) 0 / auto;
+
+	@include lg {
+		background-position: calc(50% + 220px) 0;
+		background-size: 2170px auto;
+	}
+
+	@include md {
+		padding-top: 110px;
+		background: url(assets/images/welcome-bg-mobile.jpg) no-repeat 50% 0 / auto 80%;
+	}
+
+	@include xs {
+		padding-top: 90px;
+	}
+
+	&::before {
+		position: absolute;
+		top: 230px;
+		left: 50%;
+		width: 50%;
+		height: 100%;
+		background: rgba(#242832, 0.8);
+		content: "";
+
+		@include md {
+			top: 110px;
+			left: 0;
+			width: 100%;
+			height: 80%;
+		}
+
+		@include xs {
+			top: 90px;
+		}
+	}
+
+	.side-line {
+		background: none;
+
+		&::before {
+			opacity: 1;
+		}
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		@include md {
+			display: block;
+		}
+	}
+
+	&__tooltips {
+		@include md {
+			display: none;
+		}
+	}
+
+	&__content {
+		position: relative;
+		padding-top: 50px;
+		overflow: hidden;
+		color: #fff;
+
+		@include md {
+			padding: 45px 30px 20px;
+		}
+
+		@include xs {
+			padding: 45px 0 220px;
+		}
+	}
+
+	&__title {
+		max-width: 500px;
+		margin: 0;
+		padding-left: 55px;
+		font-weight: 700;
+		font-size: 42px;
+		line-height: 1.2;
+		text-transform: uppercase;
+
+		@include md {
+			padding-left: 0;
+			font-size: 36px;
+		}
+
+		@include xs {
+			font-size: 24px;
+		}
+	}
+
+	&__text {
+		margin-top: 35px;
+		padding-left: 55px;
+
+		@include md {
+			padding-left: 0;
+		}
+	}
+
+	&__clip {
+		margin-top: 50px;
+		margin-left: -50px;
+		font-weight: 700;
+		font-size: 290px;
+		line-height: 0.7;
+		letter-spacing: -22px;
+		background: url(assets/images/welcome-bg.jpg) no-repeat -976px -707px / auto;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		@include lg {
+			margin-left: -15px;
+			font-size: 204px;
+			background-position: -850px -722px;
+			background-size: 2170px auto;
+		}
+
+		@include md {
+			width: fit-content;
+			margin: 50px auto 0;
+			line-height: 0.8;
+			letter-spacing: 0;
+			background: url(assets/images/welcome-bg-mobile.jpg) no-repeat 50% 90% / 1285px auto;
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		@include sm {
+			font-size: 180px;
+		}
+
+		@include xs {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			font-size: 130px;
+			background-position: 59% 95%;
+			transform: translateX(-50%);
+		}
+	}
+}

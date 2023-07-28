@@ -1,0 +1,189 @@
+.calculator {
+	position: relative;
+	padding-bottom: 25px;
+	background: linear-gradient(90deg, #fff 0%, #fff 50%, #9f1521 50%, #9f1521 100%);
+
+	@include sm {
+		padding: 60px 0;
+		background: #fff;
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		@include sm {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__wrapper {
+		max-width: 500px;
+		padding-top: 50px;
+		overflow: hidden;
+
+		@include lg {
+			max-width: none;
+			padding-right: 30px;
+		}
+
+		@include sm {
+			padding: 0;
+		}
+	}
+
+	&__form {
+		margin-top: 35px;
+	}
+
+	&__info {
+		display: grid;
+		grid-template-columns: 150px 1fr;
+		gap: 15px 10px;
+
+		@include md {
+			grid-template-columns: 1fr;
+			gap: 20px 10px;
+		}
+
+		@include sm {
+			grid-template-columns: 200px 1fr;
+			gap: 30px 15px;
+		}
+
+		@include xs {
+			grid-template-columns: 1fr;
+			gap: 10px;
+		}
+	}
+
+	&__label {
+		color: #787878;
+		font-size: 18px;
+
+		@include md {
+			margin-top: 15px;
+		}
+
+		@include sm {
+			margin: 0;
+		}
+
+		@include xs {
+			margin-top: 20px;
+		}
+
+		&:first-child {
+			@include md {
+				margin-top: 0;
+			}
+
+			@include xs {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__radios {
+		display: flex;
+		flex-direction: column;
+		gap: 7px;
+	}
+
+	&__user-info {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 25px 10px;
+		margin-top: 20px;
+
+		@include md {
+			grid-template-columns: 1fr;
+			gap: 35px;
+		}
+
+		@include sm {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include xs {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
+	}
+
+	&__policy {
+		align-self: center;
+		color: #787878;
+		font-size: 14px;
+	}
+
+	&__submit {
+		width: 100%;
+		max-width: 330px;
+		margin: 0 auto;
+	}
+
+	&__tooltips {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		@include lg {
+			padding-left: 30px;
+		}
+
+		@include md {
+			justify-content: center;
+		}
+
+		@include sm {
+			display: none;
+		}
+	}
+
+	&__img {
+		margin: 10px 40px 0 auto;
+		user-select: none;
+
+		@include to(1400px) {
+			margin-left: auto;
+		}
+
+		@include md {
+			width: 100%;
+			height: auto;
+			margin: 0;
+		}
+	}
+
+	&__message {
+		position: absolute;
+		bottom: 40px;
+		left: 70px;
+		display: flex;
+		gap: 35px;
+		align-items: center;
+
+		@include lg {
+			bottom: 15px;
+			left: 30px;
+			gap: 25px;
+		}
+
+		@include md {
+			top: 65px;
+			bottom: auto;
+		}
+
+		svg {
+			flex-shrink: 0;
+		}
+	}
+
+	&__text {
+		max-width: 315px;
+		color: #fff;
+		font-weight: 500;
+		font-size: 20px;
+	}
+}

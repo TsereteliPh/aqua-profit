@@ -1,0 +1,238 @@
+.footer {
+	position: relative;
+	margin-top: auto;
+	color: #fff;
+	background: url(assets/images/footer-bg.jpg) no-repeat 50% / auto;
+
+	@include sm {
+		background-size: cover;
+	}
+
+	@include xs {
+		background-position: 0 0;
+	}
+
+	&::before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 120px;
+		background: rgba(#000, 0.7);
+		content: "";
+
+		@include sm {
+			height: 100px;
+		}
+	}
+
+	&__menu {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+
+		@include sm {
+			flex-wrap: wrap;
+			gap: 10px 40px;
+			justify-content: center;
+		}
+
+		@include xs {
+			flex-direction: column;
+			gap: 20px;
+			align-items: flex-start;
+			justify-content: flex-start;
+			margin-top: 55px;
+		}
+
+		.menu-item {
+
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				padding: 35px 0;
+				font-weight: 500;
+				line-height: 1.1;
+				text-transform: uppercase;
+				text-decoration: none;
+				transition: $transition;
+
+				@include sm {
+					padding: 15px 0;
+				}
+
+				@include xs {
+					padding: 0;
+				}
+
+				&:hover {
+					color: $primary;
+				}
+
+				&:active {
+					opacity: 0.8;
+				}
+			}
+		}
+
+		.current-menu-item {
+
+			a {
+				color: $primary;
+				cursor: default;
+
+				&:active {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 30px;
+		padding-bottom: 45px;
+		border-bottom: 1px solid rgba(#c8c2c2, 0.3);
+
+		@include sm {
+			padding-bottom: 0;
+			border: none;
+		}
+
+		@include xs {
+			flex-direction: column;
+			gap: 75px;
+			align-items: flex-start;
+			margin-top: 55px;
+		}
+	}
+
+	&__address {
+		max-width: 300px;
+		font-size: 18px;
+		line-height: 1.2;
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+
+		@include xs {
+			order: -1;
+		}
+	}
+
+	&__tel {
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 1.2;
+		@include ui-link(#fff);
+	}
+
+	&__email {
+		@include ui-link($accent);
+	}
+
+	&__box {
+		position: relative;
+		display: flex;
+		align-items: center;
+		min-height: 120px;
+
+		@include sm {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 50px 0;
+			margin-top: 25px;
+		}
+
+		@include xs {
+			grid-template-columns: 1fr 1fr;
+			gap: 45px;
+		}
+	}
+
+	&__brand {
+		max-width: 300px;
+		font-size: 14px;
+
+		@include xs {
+			grid-column: 1/3;
+		}
+	}
+
+	&__link {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		@include sm {
+			position: static;
+			justify-self: center;
+			transform: none;
+		}
+
+		@include xs {
+			grid-row: 2/3;
+			grid-column: 2/3;
+		}
+	}
+
+	&__privacy-wrapper {
+		max-width: 160px;
+		margin-left: auto;
+
+		@include sm {
+			display: flex;
+			grid-row: 2/3;
+			grid-column: 1/4;
+			align-items: center;
+			justify-content: center;
+			max-width: none;
+			height: 100px;
+			margin-left: 0;
+			text-align: center;
+		}
+
+		@include xs {
+			grid-row: 3/4;
+			grid-column: 1/3;
+		}
+	}
+
+	&__privacy {
+		width: fit-content;
+		height: fit-content;
+		font-size: 14px;
+		@include ui-link($accent);
+	}
+
+	&__socials {
+		margin-left: 100px;
+
+		@include md {
+			margin-left: 30px;
+		}
+
+		@include sm {
+			justify-self: end;
+			margin-left: 0;
+		}
+
+		.socials__link {
+
+			svg {
+				@include sm {
+					width: 45px;
+					height: auto;
+				}
+			}
+		}
+	}
+}

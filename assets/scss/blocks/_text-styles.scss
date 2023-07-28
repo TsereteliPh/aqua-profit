@@ -1,0 +1,45 @@
+.st-hypten {
+	position: relative;
+	padding-left: 90px;
+	font-size: 18px;
+	line-height: 1.6;
+
+	@include lg {
+		padding-top: 15px;
+		padding-left: 0;
+	}
+
+	&::before {
+		position: absolute;
+		top: 10px;
+		left: 0;
+		width: 55px;
+		height: 3px;
+		content: "";
+		@include ui-gradient(90deg);
+
+		@include lg {
+			top: 0;
+		}
+	}
+}
+
+.st-left-border {
+	margin: 55px 0 20px;
+	padding-left: 18px;
+	font-size: 20px;
+	line-height: 1.2;
+	border-left: 5px solid $primary;
+
+	@include md {
+		margin: 30px 0 20px;
+	}
+
+	p {
+		margin-bottom: 28px;
+
+		@include xs {
+			margin-bottom: 18px;
+		}
+	}
+}

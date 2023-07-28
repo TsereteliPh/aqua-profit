@@ -1,0 +1,54 @@
+.breadcrumb {
+	position: absolute;
+	top: 280px;
+	left: 0;
+	z-index: $ui-index-3;
+	width: 100%;
+	height: fit-content;
+
+	@include md {
+		top: 130px;
+	}
+
+	@include xs {
+		top: 110px;
+	}
+
+	span {
+		display: flex;
+		gap: 25px;
+		align-items: center;
+		font-size: 14px;
+
+		span {
+
+			a {
+				color: #000;
+				text-decoration: none;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.breadcrumb_home {
+
+		@include xs {
+			display: block;
+			width: 18px;
+			height: 18px;
+			font-size: 0;
+			background: url(assets/images/icon-home.svg) no-repeat 50% / cover;
+		}
+	}
+
+	&_separator {
+		width: 8px;
+		height: 8px;
+		background: url(assets/images/icon-arrow-right.svg) no-repeat 50% / cover;
+	}
+
+	&_last {
+		color: #b3b3b3;
+		cursor: default;
+	}
+}
