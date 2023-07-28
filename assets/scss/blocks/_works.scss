@@ -28,6 +28,14 @@
 
 		@include lg {
 			font-size: 90px;
+		}
+
+		@include md {
+			top: 62px;
+			font-size: 64px;
+		}
+
+		@include sm {
 			display: none;
 		}
 	}
@@ -113,6 +121,14 @@
 					background-color: #fff;
 				}
 			}
+		}
+	}
+
+	&__button {
+		margin: 60px auto 0;
+
+		@include xs {
+			margin: 40px auto 0;
 		}
 	}
 }

@@ -11,7 +11,12 @@ function load_more() {
 	if( $query->have_posts() ) {
 		while( $query->have_posts() ) {
 			$query->the_post();
-			$return_html .= get_template_part('layouts/partials/post-card');
+			if ( $args['post_type'] == 'project' ) {
+				$return_html .= get_template_part( 'layouts/partials/cards/project', null, array(
+					'class' => 'works__item',
+					'iteration' => 1
+				) );
+			}
 		}
 		wp_reset_postdata();
 	}

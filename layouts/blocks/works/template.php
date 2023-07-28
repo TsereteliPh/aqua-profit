@@ -11,7 +11,7 @@
                 $args = [
                     'post_type' => 'project',
                     'orderby' => 'post_date',
-                    'posts_per_page' => '4',
+                    'posts_per_page' => '10',
                     'paged' => 1
                 ];
 				$iteration = 0;
@@ -48,7 +48,7 @@
         </ul>
 
         <?php if ( $query->max_num_pages > 1 ) : ?>
-            <button class="btn-show-more works__button js-show-more" type="button" data-text="Показать еще">Показать еще проекты</button>
+            <button class="btn-show-more works__button js-show-more" type="button" data-text="Показать еще проекты">Показать еще проекты</button>
 
             <script>
                 let posts = '<?php echo json_encode($query->query_vars); ?>';

@@ -22,3 +22,30 @@
 		@include ui-gradient(135deg);
 	}
 }
+
+
+.btn-show-more {
+	display: block;
+	width: fit-content;
+	min-height: 60px;
+	padding: 20px;
+	color: #000;
+	font-weight: 500;
+	text-transform: uppercase;
+	background-color: transparent;
+	border: 1px solid $accent;
+	border-radius: 10px;
+	transition: $transition;
+
+	@media (hover: hover) {
+		&:hover {
+			color: rgba(#fff, 0.9);
+			background-color: $primary;
+			border-color: $primary;
+		}
+	}
+
+	&:active {
+		opacity: 0.9;
+	}
+}
