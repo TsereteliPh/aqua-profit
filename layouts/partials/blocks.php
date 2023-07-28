@@ -22,5 +22,6 @@ if (have_rows('blocks', $id)) {
 		else if (get_row_layout() == 'services') get_template_part('layouts/blocks/services/template');
 		else if (get_row_layout() == 'services-links') get_template_part('layouts/blocks/services-links/template');
 		else if (get_row_layout() == 'stages') get_template_part('layouts/blocks/stages/template');
+		else if (get_row_layout() == 'works') get_template_part('layouts/blocks/works/template');
 	}
 }

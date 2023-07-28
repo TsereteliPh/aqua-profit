@@ -1,0 +1,101 @@
+.project-card {
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 20px 0 rgba(#000, 0.1);
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		@include xs {
+			flex-shrink: 1;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		flex-shrink: 0;
+		gap: 15px;
+		min-height: 40%;
+		padding: 25px 20px;
+
+		@include lg {
+			padding: 15px 10px;
+		}
+
+		@include md {
+			padding: 25px 20px;
+		}
+
+		@include sm {
+			padding: 25px 15px;
+		}
+	}
+
+	&__label {
+		font-weight: 700;
+		font-size: 20px;
+
+		@include sm {
+			font-size: 18px;
+		}
+	}
+
+	&__works {
+		color: #595959;
+		font-size: 18px;
+		line-height: 1.2;
+		text-transform: lowercase;
+
+		@include sm {
+			font-size: 16px;
+		}
+	}
+
+	&__link {
+		position: relative;
+		display: flex;
+		gap: 5px;
+		align-items: center;
+		width: fit-content;
+		margin-top: auto;
+		color: #000;
+		font-weight: 500;
+		text-decoration: none;
+		transition: $transition;
+
+		@media (hover: hover) {
+
+			&:hover {
+				gap: 10px;
+
+				&::before {
+
+					transform: scale(0);
+				}
+			}
+		}
+
+		&:active {
+			opacity: 0.8;
+		}
+
+		&::before {
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: $primary;
+			transition: $transition;
+			content: "";
+		}
+
+		svg {
+			color: $primary;
+		}
+	}
+}
