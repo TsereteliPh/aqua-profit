@@ -90,6 +90,32 @@ if (!function_exists('adem_setup')) {
 		'query_var' => true,
 		'publicly_queryable' => false
 	]);
+
+	register_post_type('project', [
+		'label' => null,
+		'labels' => [
+			'name' => 'Проекты',
+			'singular_name' => 'Проект',
+			'add_new' => 'Добавить проект',
+			'add_new_item' => 'Добавить проект',
+			'edit_item' => 'Редактировать проект',
+			'new_item' => 'Новый проект',
+			'view_item' => 'Смотреть проект',
+			'search_items' => 'Найти проект',
+			'not_found' => 'Не найдено',
+			'not_found_in_trash' => 'Не найдено в корзине',
+			'menu_name' => 'Портфолио',
+		],
+		'public' => true,
+		'show_in_menu' => true,
+		'menu_position' => 22,
+		'menu_icon' => 'dashicons-admin-multisite',
+		'supports' => ['title', 'thumbnail'],
+		'has_archive' => false,
+		'rewrite' => true,
+		'query_var' => true,
+		'publicly_queryable' => false
+	]);
 }
 
 add_action('after_setup_theme', 'adem_setup');
