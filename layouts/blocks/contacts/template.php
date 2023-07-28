@@ -30,17 +30,15 @@
 					</div>
 				</div>
 
-				<?php
-					if ( $photo ) {
-						echo wp_get_attachment_image( $photo, 'large', false, array(
-							'class' => 'contacts__img'
-						) );
-					} else {
-						echo wp_get_attachment_image( 107, 'large', false, array(
-							'class' => 'contacts__img'
-						) );
-					}
-				?>
+				<?php if ( $photo ) : ?>
+					<a href="<?php echo $photo['url']; ?>" class="contacts__photo" data-fancybox>
+						<?php echo wp_get_attachment_image( $photo['ID'], 'large', false ); ?>
+					</a>
+				<?php else : ?>
+					<a class="contacts__photo">
+						<?php echo wp_get_attachment_image( 107, 'large', false ); ?>
+					</a>
+				<?php endif; ?>
 			</div>
 
 			<div id="contacts_map" class="contacts__map"></div>
