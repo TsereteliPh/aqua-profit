@@ -114,7 +114,7 @@ if (!function_exists('adem_setup')) {
 		'has_archive' => false,
 		'rewrite' => true,
 		'query_var' => true,
-		'publicly_queryable' => false
+		'publicly_queryable' => true
 	]);
 }
 
@@ -127,13 +127,11 @@ add_filter('use_widgets_block_editor', '__return_false');
 add_action('wp_enqueue_scripts', 'adem_scripts');
 function adem_scripts()
 {
-//	эти стили не убирай они отключают стандартные стили wp которые не нужны
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('wp-block-library-theme');
 	wp_dequeue_style('wc-block-style');
 	wp_dequeue_style('global-styles');
 	wp_dequeue_style('classic-theme-styles');
-//	конец
 	wp_enqueue_style('fancybox', get_template_directory_uri() . '/assets/vendor/css/fancybox.css', array(), '4.0.31');
 	wp_enqueue_script('fancybox', get_template_directory_uri() . '/assets/vendor/js/fancybox.umd.js', array(), '4.0.31', true);
 	wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/vendor/css/swiper-bundle.min.css', array(), '8.4.7');
@@ -141,6 +139,24 @@ function adem_scripts()
 	wp_enqueue_style('adem', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_enqueue_script('adem', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true);
 	wp_localize_script('adem', 'adem_ajax', array('url' => admin_url('admin-ajax.php')));
+}
+
+// Custom breadcrumbs yoast
+add_filter( 'wpseo_breadcrumb_links', 'custom_breadcrumbs' );
+
+function custom_breadcrumbs( $links ) {
+	global $post;
+
+	if( is_singular( 'project' ) ) {
+		$breadcrumb[] = array(
+			'url' => get_page_link( 26 ),
+			'text' => 'Наши работы',
+		);
+
+		array_splice( $links, 1, -2, $breadcrumb );
+	}
+
+	return $links;
 }
 
 // disable scale images

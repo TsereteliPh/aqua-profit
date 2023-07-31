@@ -20,6 +20,10 @@
 		align-items: center;
 		font-size: 14px;
 
+		@include xs {
+			gap: 10px;
+		}
+
 		span {
 
 			a {

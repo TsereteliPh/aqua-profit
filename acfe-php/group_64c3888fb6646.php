@@ -20,7 +20,7 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'message' => 'В заголовке проекта указывается район или название ЖК/СНТ выполненного объекта. Также необходимо выбрать миниатюру проекта (featured image) - справа.',
+			'message' => 'В заголовке проекта указывается район или название ЖК/СНТ выполненного объекта. Также необходимо выбрать миниатюру проекта (featured image) - справа. Изображение должно быть хорошего качества и разрешения.',
 			'new_lines' => 'wpautop',
 			'esc_html' => 0,
 			'acfe_field_group_condition' => 0,
@@ -371,7 +371,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1690538992,
+	'modified' => 1690798357,
 ));
 
 endif;

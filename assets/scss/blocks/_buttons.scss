@@ -78,6 +78,7 @@
 	transition: $transition;
 
 	@media (hover: hover) {
+
 		&:hover {
 			color: rgba(#fff, 0.9);
 			background-color: $primary;
@@ -87,5 +88,21 @@
 
 	&:active {
 		opacity: 0.9;
+	}
+}
+
+.btn-play {
+	position: absolute;
+	top: 50%;
+	left: 53.5%;
+	display: block;
+	background-color: transparent;
+	border: none;
+	translate: -50% -50%;
+	transition: $transition;
+	@include ui-triangle(to right, 68px, 78px, $secondary);
+
+	@include sm {
+		@include ui-triangle(to right, 48px, 58px, $secondary);
 	}
 }

@@ -245,11 +245,6 @@ try {
 	Fancybox.bind("[data-fancybox]", {
 		animated: false,
 	});
-
-	Fancybox.bind('[data-src="#order-calc"]', {
-		defaultDisplay: "block",
-		dragToClose: false,
-	});
 } catch (error) {
 	console.log(error);
 }
@@ -261,10 +256,10 @@ try {
 const worksCarousel = document.querySelector('.works-slider__container');
 
 if (worksCarousel) {
-	let papersSwiper = new Swiper(worksCarousel, {
+	let worksSwiper = new Swiper(worksCarousel, {
 		navigation: {
-			nextEl: ".works-slider__next",
-			prevEl: ".works-slider__prev",
+			nextEl: '.works-slider__next',
+			prevEl: '.works-slider__prev',
 		},
 		breakpoints: {
 			992: {
@@ -288,6 +283,34 @@ if (worksCarousel) {
 		spaceBetween: 25,
 		loop: false,
 		autoHeight: true,
+	});
+}
+//Слайдер single.php -> .project
+
+const projectCarousel = document.querySelector('.project__gallery');
+
+if (projectCarousel && window.innerWidth >= 577) {
+	let projectSwiper = new Swiper(projectCarousel, {
+		navigation: {
+			nextEl: projectCarousel.parentNode.querySelector('.project__gallery-next'),
+			prevEl: projectCarousel.parentNode.querySelector('.project__gallery-prev'),
+		},
+		breakpoints: {
+			1280: {
+				slidesPerView: 7,
+
+			},
+			992: {
+				slidesPerView: 5,
+			},
+			769: {
+				slidesPerView: 4,
+			},
+			577: {
+				slidesPerView: 3,
+			},
+		},
+		spaceBetween: 8,
 	});
 }
 
