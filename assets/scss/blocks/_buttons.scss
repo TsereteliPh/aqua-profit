@@ -23,6 +23,46 @@
 	}
 }
 
+.btn-underline {
+	position: relative;
+	display: block;
+	width: fit-content;
+	padding: 0;
+	color: #000;
+	font-weight: 500;
+	text-transform: uppercase;
+	text-decoration: none;
+	background-color: transparent;
+	border: none;
+	transition: $transition;
+
+	@media (hover: hover) {
+
+		&:hover {
+			color: $primary;
+
+			&::before {
+				transform: scale(0);
+			}
+		}
+	}
+
+	&:active {
+		opacity: 0.8;
+	}
+
+	&::before {
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: $primary;
+		transition: $transition;
+		content: "";
+	}
+}
+
 
 .btn-show-more {
 	display: block;

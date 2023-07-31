@@ -28,7 +28,7 @@
 
 						<h3 class="services__label"><?php echo $service['label']; ?></h3>
 
-						<button class="services__accordion" type="button">Об услуге</button>
+						<button class="btn-underline services__accordion" type="button">Об услуге</button>
 
 						<div class="services__desc"><?php echo $service['desc']; ?></div>
 

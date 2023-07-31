@@ -2,9 +2,9 @@
 	<div class="container">
 
 	<?php get_template_part('/layouts/partials/title', null, array(
-            'class' => 'works__caption',
-            'title' => get_sub_field('title')
-        )); ?>
+		'class' => 'works__caption',
+		'title' => get_sub_field('title')
+	)); ?>
 
         <ul class="reset-list works__list js-show-more-container">
             <?php
@@ -24,7 +24,8 @@
                         foreach ($posts as $post) {
                             get_template_part('layouts/partials/cards/project', null, array(
                                 'class' => 'works__item',
-								'iteration' => $iteration
+								'iteration' => $iteration,
+								'slider' => false
                             ));
 
 							$iteration++;
@@ -35,7 +36,8 @@
 
                             get_template_part('layouts/partials/cards/project', null, array(
                                 'class' => 'works__item',
-								'iteration' => $iteration
+								'iteration' => $iteration,
+								'slider' => false
                             ));
 
 							$iteration++;

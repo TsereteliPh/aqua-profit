@@ -258,34 +258,36 @@ try {
 
 //Слайдер blocks/rest
 
-const restCarousel = document.querySelector(".rest__wrapper");
+const worksCarousel = document.querySelector('.works-slider__container');
 
-if (restCarousel) {
-	let papersSwiper = new Swiper(restCarousel, {
+if (worksCarousel) {
+	let papersSwiper = new Swiper(worksCarousel, {
 		navigation: {
-			nextEl: ".rest__next",
-			prevEl: ".rest__prev",
+			nextEl: ".works-slider__next",
+			prevEl: ".works-slider__prev",
 		},
 		breakpoints: {
-			1440: {
-				slidesPerView: 4,
-				centeredSlides: false,
-			},
 			992: {
 				slidesPerView: 3,
 				centeredSlides: false,
+				loop: true,
+				autoHeight: false,
 			},
 			769: {
 				slidesPerView: 2,
 				centeredSlides: false,
+				autoHeight: false,
 			},
 			577: {
 				centeredSlides: false,
+				autoHeight: false,
 			},
 		},
 		slidesPerView: "auto",
 		centeredSlides: true,
 		spaceBetween: 25,
+		loop: false,
+		autoHeight: true,
 	});
 }
 

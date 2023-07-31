@@ -2,9 +2,9 @@
     <symbol fill="currentColor" viewBox="0 0 23 16" id="icon-arrow-left">
         <path  d="M.78 8.967a1 1 0 0 1 0-1.414l6.364-6.364a1 1 0 0 1 1.414 1.414L2.901 8.26l5.657 5.657a1 1 0 1 1-1.414 1.414L.78 8.967Zm21.377.293H1.487v-2h20.67v2Z"></path>
     </symbol>
-    <symbol fill="currentColor" viewBox="0 0 8 8" id="icon-arrow-right">
-        <path d="M1 3.5a.5.5 0 0 0 0 1v-1Zm6.354.854a.5.5 0 0 0 0-.708L4.172.464a.5.5 0 1 0-.708.708L6.293 4 3.464 6.828a.5.5 0 1 0 .708.708l3.182-3.182ZM1 4.5h6v-1H1v1Z"></path>
-    </symbol>
+    <symbol fill="currentColor" viewBox="0 0 22 16" id="icon-arrow-right">
+		<path d="M21.695 8.707a1 1 0 0 0 0-1.414L15.331.929a1 1 0 1 0-1.414 1.414L19.574 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM.318 9h20.67V7H.318v2Z"/>
+	</symbol>
 	<symbol fill="currentColor" viewBox="0 0 11 17" id="icon-arrow-tooltip">
 		<path d="m.893 15.184 1.611 1.611 7.999-7.998L2.504.798 1.048 2.254 7.435 8.64.893 15.184Z" clip-rule="evenodd"/>
 	</symbol>

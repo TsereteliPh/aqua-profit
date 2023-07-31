@@ -29,9 +29,11 @@
 			?>
 		</div>
 
-		<a href="<?php the_permalink(); ?>" class="project-card__link">
-			Смотреть полностью
-			<svg width="8" height="8"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-right"></use></svg>
-		</a>
+		<?php if ( !$args['slider'] ) : ?>
+			<a href="<?php the_permalink(); ?>" class="btn-underline project-card__link">
+				Смотреть полностью
+				<svg width="8" height="8"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-right"></use></svg>
+			</a>
+		<?php endif; ?>
 	</div>
 </li>
