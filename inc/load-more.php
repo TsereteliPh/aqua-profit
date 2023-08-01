@@ -16,6 +16,10 @@ function load_more() {
 					'class' => 'works__item',
 					'iteration' => 1
 				) );
+			} else if ( $args['post_type'] == 'review' ) {
+				$return_html .= get_template_part( 'layouts/partials/cards/review', null, array(
+					'class' => 'reviews__item'
+				) );
 			}
 		}
 		wp_reset_postdata();

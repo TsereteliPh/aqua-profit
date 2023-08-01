@@ -19,6 +19,8 @@ if (have_rows('blocks', $id)) {
 		else if (get_row_layout() == 'contacts') get_template_part('layouts/blocks/contacts/template');
 		else if (get_row_layout() == 'faq') get_template_part('layouts/blocks/faq/template');
 		else if (get_row_layout() == 'question') get_template_part('layouts/blocks/question/template');
+		else if (get_row_layout() == 'reviews-slider') get_template_part('layouts/blocks/reviews-slider/template');
+		else if (get_row_layout() == 'reviews') get_template_part('layouts/blocks/reviews/template');
 		else if (get_row_layout() == 'services') get_template_part('layouts/blocks/services/template');
 		else if (get_row_layout() == 'services-links') get_template_part('layouts/blocks/services-links/template');
 		else if (get_row_layout() == 'stages') get_template_part('layouts/blocks/stages/template');

@@ -1,0 +1,28 @@
+.reviews {
+	position: relative;
+	padding: 30px 0 60px;
+	overflow: hidden;
+	background: linear-gradient(to bottom, #fff 0%, #f6f6f6 100%);
+
+	@include sm {
+		padding: 30px 0 60px;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 35px 25px;
+
+		@include sm {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__button {
+		margin: 60px auto 0;
+
+		@include xs {
+			margin: 40px auto 0;
+		}
+	}
+}

@@ -285,6 +285,7 @@ if (worksCarousel) {
 		autoHeight: true,
 	});
 }
+
 //Слайдер single.php -> .project
 
 const projectCarousel = document.querySelector('.project__gallery');
@@ -311,6 +312,34 @@ if (projectCarousel && window.innerWidth >= 577) {
 			},
 		},
 		spaceBetween: 8,
+	});
+}
+
+//Слайдер .reviews-slider__container
+
+const reviewsCarousel = document.querySelector('.reviews-slider__container');
+
+if (reviewsCarousel) {
+	let reviewsSwiper = new Swiper(reviewsCarousel, {
+		navigation: {
+			nextEl: '.reviews-slider__next',
+			prevEl: '.reviews-slider__prev',
+		},
+		breakpoints: {
+			769: {
+				slidesPerView: 2,
+				autoHeight: false,
+				spaceBetween: 25,
+			},
+			577: {
+				slidesPerView: 1,
+				spaceBetween: 25,
+			},
+		},
+		slidesPerView: "auto",
+		spaceBetween: 10,
+		autoHeight: true,
+		grabCursor: true
 	});
 }
 
