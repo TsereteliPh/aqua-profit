@@ -11,7 +11,19 @@
 
 			<div class="question__text"><?php the_sub_field( 'text' ); ?></div>
 
-			<form action="#" method="POST" class="question__form">
+			<form method="POST" class="question__form" name="Вопрос">
+				<?php
+					wp_nonce_field( 'Вопрос', 'question_input' );
+
+					if (is_archive()) {
+						$pageTitle = get_the_archive_title();
+					} else {
+						$pageTitle = get_the_title();
+					}
+				?>
+
+				<input type="text" class="hidden" name="page_request" value="<?php echo $pageTitle; ?>">
+
 				<input type="text" name="client_name" class="input question__name" placeholder="Ваше имя" required>
 
 				<input type="tel" name="client_tel" class="input question__tel" placeholder="+7 (999) 999-99-99" required>

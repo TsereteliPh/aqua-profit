@@ -124,24 +124,37 @@ add_action("wp_ajax_send_mail", "send_mail");
 add_action("wp_ajax_nopriv_send_mail", "send_mail");
 function send_mail()
 {
-	if (empty($_POST['form_name']) || empty($_POST['page_request'])) exit;
+	if ( empty( $_POST['form_name'] ) || empty( $_POST['page_request'] ) ) exit;
+	if ( $_POST['form_name'] == 'Звонок' && !wp_verify_nonce( $_POST['callback_input'], $_POST['form_name'] ) ) exit;
+	if ( $_POST['form_name'] == 'Смета' && !wp_verify_nonce( $_POST['calculator_input'], $_POST['form_name'] ) ) exit;
+	if ( $_POST['form_name'] == 'Вопрос' && !wp_verify_nonce( $_POST['question_input'], $_POST['form_name'] ) ) exit;
 
 	$form_name = $_POST['form_name'];
 	$mail = '';
 	$mail = isset($_POST['client_name']) ? "Имя: " . strip_tags($_POST['client_name']) . "<br/>" : '';
 	$mail .= isset($_POST['client_tel']) ? "Телефон: <a href='tel:" . strip_tags($_POST['client_tel']) . "'>" . strip_tags($_POST['client_tel']) . "</a><br/>" : '';
 	$mail .= isset($_POST['client_email']) ? "Email: <a href='mailto:" . strip_tags($_POST['client_email']) . "'>" . strip_tags($_POST['client_email']) . "</a><br/>" : '';
+	$mail .= isset($_POST['client_heating_type']) ? "Вид отопления: " . strip_tags($_POST['client_heating_type']) . "<br/>" : '';
+	$mail .= isset($_POST['client_house_material_type']) ? "Материал дома: " . strip_tags($_POST['client_house_material_type']) . "<br/>" : '';
+	$mail .= isset($_POST['client_house_area']) ? "Площадь дома: " . strip_tags($_POST['client_house_area']) . " м²" . "<br/>" : '';
+	$mail .= isset($_POST['client_number_of_batteries']) ? "Количество батарей: " . strip_tags($_POST['client_number_of_batteries']) . " шт" . "<br/>" : '';
+	$mail .= isset($_POST['client_floor_area']) ? "Площадь теплых полов: " . strip_tags($_POST['client_floor_area']) . " м²" . "<br/>" : '';
 	$mail .= isset($_POST['client_message']) ? "Сообщение: " . strip_tags($_POST['client_message']) . "<br/>" : '';
-	$mail .= "Страница: $_POST[page_request] <br/>";
+	$mail .= "Страница: " . $_POST['page_request'] . "<br/>";
 
 	require_once ABSPATH . 'wp-admin/includes/image.php';
 	require_once ABSPATH . 'wp-admin/includes/file.php';
 	require_once ABSPATH . 'wp-admin/includes/media.php';
 
 	$uploaded_images = array();
+	$extensions = array('jpeg', 'jpg', 'png', 'gif', 'pfd', 'dwg');
 
 	if ($_FILES) {
 		foreach ($_FILES as $file_id => $data) {
+			$ext = strtolower( pathinfo( $data['name'], PATHINFO_EXTENSION ) );
+			if (!in_array($ext, $extensions)) {
+				continue;
+			}
 			$attach_id = media_handle_upload($file_id, 0);
 			$mail .= "Файл: <a href='" . wp_get_attachment_url($attach_id) . "'>Ссылка на файл</a><br/>";
 			// ошибка

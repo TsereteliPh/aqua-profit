@@ -16,7 +16,19 @@
 				'title' => get_sub_field( 'title' )
 			) ); ?>
 
-			<form action="#" method="POST" class="calculator__form">
+			<form method="POST" class="calculator__form" name="Смета">
+				<?php
+					wp_nonce_field( 'Смета', 'calculator_input' );
+
+					if (is_archive()) {
+						$pageTitle = get_the_archive_title();
+					} else {
+						$pageTitle = get_the_title();
+					}
+				?>
+
+				<input type="text" class="hidden" name="page_request" value="<?php echo $pageTitle; ?>">
+
 				<div class="calculator__info">
 					<?php if ($material) : ?>
 						<div class="calculator__label">Материал дома:</div>

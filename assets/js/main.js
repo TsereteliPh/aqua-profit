@@ -137,11 +137,18 @@ function setFileName() {
 	const fileInputContainers = document.querySelectorAll('.js-file-input');
 	if (fileInputContainers) {
 		fileInputContainers.forEach(function (container) {
+			let fileForm = container.parentNode;
+
 			let input = container.querySelector('input[type=file]');
 			let label = container.querySelector('label');
-			input.addEventListener("change", function () {
+
+			input.addEventListener("change", function() {
 				label.textContent = this.files[0].name;
 			});
+
+			fileForm.addEventListener('reset', function() {
+				label.textContent = 'Обзор';
+			})
 		});
 	}
 }
@@ -395,6 +402,8 @@ const calcRanges = document.querySelectorAll('.range');
 
 if (calcRanges) {
 	calcRanges.forEach(calcRange => {
+		let rangeForm = calcRange.parentNode.parentNode;
+
 		let calcSlider = calcRange.querySelector('.range-slider');
 		let calcSelect = calcRange.querySelector('.range-select');
 		let calcThumb = calcRange.querySelector('.range-thumb');
@@ -402,6 +411,10 @@ if (calcRanges) {
 		let calcBar = calcRange.querySelector('.range-bar');
 
 		calcValue.innerHTML = calcSlider.value;
+
+		rangeForm.addEventListener('reset', function(evt) {
+			evt.preventDefault();
+		})
 
 		calcSlider.oninput = function() {
 			calcValue.innerHTML = this.value;
