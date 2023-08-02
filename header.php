@@ -33,9 +33,11 @@
 				'menu_class' => 'reset-list header__menu'
 			)); ?>
 
-			<button class="header__search-btn" type="button" aria-label="Открыть поисковую строку">
-				<svg width="20" height="20"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-search"></use></svg>
-			</button>
+			<?php if (false) : ?>
+				<button class="header__search-btn" type="button" aria-label="Открыть поисковую строку">
+					<svg width="20" height="20"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-search"></use></svg>
+				</button>
+			<?php endif; ?>
 		</div>
 
 		<div class="header__info">
