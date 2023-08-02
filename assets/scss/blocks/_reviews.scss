@@ -12,6 +12,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 35px 25px;
+		margin-top: 45px;
 
 		@include sm {
 			grid-template-columns: 1fr;

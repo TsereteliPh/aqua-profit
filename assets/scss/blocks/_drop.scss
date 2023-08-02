@@ -1,0 +1,192 @@
+.drop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: $ui-index-6;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	justify-content: space-between;
+	width: 450px;
+	height: 100vh;
+	overflow-y: auto;
+	background-color: #fff;
+	box-shadow: 0 0 20px 0 rgba(#000, 0.3);
+	transform: translate(-100%);
+	transition: $transition;
+
+	@include md {
+		top: 110px;
+		height: calc(100vh - 110px);
+		box-shadow: 0 20px 20px 0 rgba(#000, 0.2);
+	}
+
+	@include sm {
+		height: calc(100dvh - 110px);
+	}
+
+	@include xs {
+		top: 90px;
+		width: 100%;
+		height: calc(100dvh - 90px);
+	}
+
+	&.active {
+		transform: translate(0);
+	}
+
+	&__cross {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 25px;
+		height: 25px;
+		padding: 30px;
+		cursor: pointer;
+
+		@include md {
+			display: none;
+		}
+
+		&:hover {
+
+			span {
+				background-color: $primary;
+			}
+		}
+
+		&:active {
+			opacity: 0.8;
+		}
+
+		span {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 30px;
+			height: 4px;
+			background-color: #000;
+			border-radius: 2px;
+
+			&:first-child {
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+
+			&:last-child {
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+		}
+	}
+
+	&__menu {
+		display: flex;
+		flex: 1 0 auto;
+		flex-direction: column;
+		height: fit-content;
+		padding: 75px 15px 0;
+
+		@include md {
+			padding: 0 15px;
+		}
+
+		@include xs {
+			flex: 0 1 auto;
+		}
+
+		.menu-item {
+			width: 100%;
+			height: fit-content;
+			border-bottom: 1px solid #e9e9e9;
+
+			@include sm {
+				border-top: 1px solid #e9e9e9;
+				border-bottom: none;
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			a {
+				display: block;
+				width: 100%;
+				height: fit-content;
+				padding: 30px 0;
+				color: #000;
+				font-weight: 500;
+				font-size: 20px;
+				text-transform: uppercase;
+				text-decoration: none;
+				transition: $transition;
+
+				&:hover {
+					color: $primary;
+				}
+
+				&:active {
+					opacity: 0.8;
+				}
+			}
+		}
+
+		.current-menu-item {
+
+			a {
+				color: $primary;
+				cursor: default;
+
+				&:active {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		padding: 30px 15px 500px;
+		background: #9f1521 url(assets/images/calculator-img.jpg) no-repeat 50% 160px / calc(100% - 30px) auto;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+
+		@include sm {
+			padding: 30px 15px 350px;
+		}
+
+		@include xs {
+			height: 170px;
+			padding: 30px 15px;
+			background-position: right 20px;
+			background-size: 170px auto;
+		}
+	}
+
+	&__tel {
+		font-weight: 500;
+		font-size: 20px;
+		@include ui-link(#fff);
+	}
+
+	&__email {
+		margin-top: 10px;
+		font-size: 18px;
+		@include ui-link(#fff);
+
+		@include xs {
+			font-size: 16px;
+		}
+	}
+
+	&__socials {
+		margin-top: 20px;
+
+		svg {
+
+			@include xs {
+				width: 35px;
+				height: 35px;
+			}
+		}
+	}
+}

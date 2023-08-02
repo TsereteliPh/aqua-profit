@@ -11,7 +11,7 @@
                 $args = [
                     'post_type' => 'review',
                     'orderby' => 'post_date',
-                    'posts_per_page' => '3',
+                    'posts_per_page' => '10',
                     'paged' => 1
                 ];
 				$iteration = 0;

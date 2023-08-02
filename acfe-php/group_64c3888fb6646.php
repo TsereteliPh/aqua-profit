@@ -345,6 +345,27 @@ acf_add_local_field_group(array(
 			'preview_size' => 'medium',
 			'acfe_field_group_condition' => 0,
 		),
+		array(
+			'key' => 'field_64c8e846c59b1',
+			'label' => 'Местоположение на карте',
+			'name' => 'location',
+			'aria-label' => '',
+			'type' => 'yandex-map',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'height' => 400,
+			'map_type' => 'map',
+			'zoom' => 13,
+			'center_lat' => '52.59755023463247',
+			'center_lng' => '39.60875554633794',
+			'acfe_field_group_condition' => 0,
+		),
 	),
 	'location' => array(
 		array(
@@ -371,7 +392,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1690798357,
+	'modified' => 1690898436,
 ));
 
 endif;

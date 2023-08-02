@@ -350,20 +350,42 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 	if (header) {
 		const headerBurger = header.querySelectorAll('.header__burger');
-		const headerDrop = header.querySelector('.header__drop');
+		const drop = document.querySelector('.drop');
+		const cross = drop.querySelector('.drop__cross');
+
+		let menuClose = () => {
+			let activeBurger = header.querySelector('.header__burger.active');
+			activeBurger.classList.remove('active');
+			drop.classList.remove('active');
+
+			document.body.style.overflow = 'visible';
+		}
 
 		headerBurger.forEach(burger => {
-			burger.onclick = () => {
-				burger.classList.toggle('active');
-				headerDrop.classList.toggle('active');
-			}
+			burger.addEventListener('click', function() {
+				if (this.classList.contains('active')) {
+					menuClose();
+				} else {
+					this.classList.add('active');
+					drop.classList.add('active');
+
+					document.body.style.overflow = 'hidden';
+					menuCloseOut(this);
+				}
+			})
 		});
 
-		// drop.addEventListener('mouseup', (e) => {
-		// 	if (drop === e.target) {
-		// 		dropCloser();
-		// 	}
-		// });
+		let menuCloseOut = (btn) => {
+			document.addEventListener('mousedown', (e) => {
+				if (!drop.contains(e.target) && drop.classList.contains('active') && e.target != btn) {
+					menuClose();
+				}
+			})
+		}
+
+		cross.onclick = () => {
+			menuClose();
+		}
 	}
 })
 

@@ -53,7 +53,7 @@ if (!function_exists('adem_setup')) {
 			'menu_name' => 'Отзывы',
 		],
 		'public' => true,
-		'show_in_menu' => true,
+		'show_in_menu' => false,
 		'menu_position' => 22,
 		'menu_icon' => 'dashicons-format-chat',
 		'supports' => ['title'],
@@ -80,7 +80,7 @@ if (!function_exists('adem_setup')) {
 			'menu_name' => 'Вопрос - ответ',
 		],
 		'public' => true,
-		'show_in_menu' => true,
+		'show_in_menu' => false,
 		'menu_position' => 23,
 		'menu_icon' => 'dashicons-editor-help',
 		'supports' => ['title'],
@@ -139,6 +139,24 @@ function adem_scripts()
 	wp_enqueue_style('adem', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_enqueue_script('adem', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true);
 	wp_localize_script('adem', 'adem_ajax', array('url' => admin_url('admin-ajax.php')));
+}
+
+// Ending on map objects function
+
+function endingMap ($num) {
+	$number = substr($num, -2);
+
+	if ($number > 10 and $number < 20) {
+		$ending = 'Выполненных проектов';
+	} else {
+		$number = substr($number, -1);
+
+		if ($number == 1) $ending = 'Выполненный проект';
+		if ($number > 1) $ending = 'Выполненных проекта';
+		if ($number > 4 || $number == 0) $ending = 'Выполненных проектов';
+	}
+
+	echo $ending;
 }
 
 // Custom breadcrumbs yoast

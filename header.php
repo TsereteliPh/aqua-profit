@@ -11,6 +11,11 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php
+	$tel = get_field( 'tel', 'options' );
+	$email = get_field( 'email', 'options' );
+	$socials = get_field( 'socials', 'options' );
+?>
 <header class="header<?php echo (is_front_page()) ? ' header--front' : ''; ?>">
 	<?php if ( !is_front_page(  ) ) : ?>
 		<div class="side-line"></div>
@@ -44,10 +49,7 @@
 
 			<div class="header__desc">Монтаж систем отопления и водоснабжения в Липецке</div>
 
-			<?php
-				$tel = get_field( 'tel', 'options' );
-				if ($tel) :
-			?>
+			<?php if ($tel) : ?>
 				<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $tel); ?>" class="header__tel"><?php echo $tel; ?></a>
 			<?php endif; ?>
 
@@ -58,6 +60,40 @@
 		</div>
 	</div>
 </header>
+
+<div class="drop">
+	<div class="drop__cross">
+		<span></span>
+		<span></span>
+	</div>
+
+	<?php wp_nav_menu(array(
+		'theme_location' => 'menu_popup',
+		'container' => '',
+		'menu_id' => 'menu-popup',
+		'menu_class' => 'reset-list drop__menu'
+	)); ?>
+
+	<div class="drop__contacts">
+		<?php if ($tel) : ?>
+			<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $tel); ?>" class="drop__tel"><?php echo $tel; ?></a>
+		<?php endif; ?>
+
+		<?php if ($email) : ?>
+			<a href="mailto:<?php echo $email; ?>" class="drop__email"><?php echo $email; ?></a>
+		<?php endif; ?>
+
+		<?php if ($socials) : ?>
+			<div class="drop__socials socials">
+				<?php foreach ($socials as $social) : ?>
+					<a href="<?php echo $social['link']; ?>" class="socials__link">
+						<svg width="40" height="40"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-<?php echo $social['social']; ?>"></use></svg>
+					</a>
+				<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
+	</div>
+</div>
 
 <?php if( !is_front_page() && function_exists( 'yoast_breadcrumb' ) ) : ?>
 	<div class="breadcrumb">

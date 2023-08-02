@@ -1,0 +1,64 @@
+.map {
+	padding-top: 40px;
+	background-color: #f6f6f6;
+
+	@include xs {
+		padding-top: 70px;
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+
+		@include md {
+			flex-wrap: wrap;
+			gap: 30px;
+			justify-content: space-between;
+		}
+	}
+
+	&__title {
+		margin: 0;
+	}
+
+	&__done {
+		display: flex;
+		gap: 25px;
+		align-items: center;
+		margin-left: 265px;
+
+		@include md {
+			margin-left: 0;
+		}
+	}
+
+	&__count {
+		color: $primary;
+		font-weight: 500;
+		font-size: 88px;
+
+		@include xs {
+			font-size: 52px;
+		}
+	}
+
+	&__text {
+		max-width: 170px;
+		font-size: 18px;
+	}
+
+	&__holder {
+		width: 100%;
+		height: 610px;
+		margin-top: 40px;
+
+		@include xs {
+			height: 450px;
+		}
+
+		[class*="copyrights"] {
+
+			display: none;
+		}
+	}
+}
