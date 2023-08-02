@@ -1,0 +1,71 @@
+.modals {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 40px;
+	border-radius: 10px;
+
+	@include xs {
+		width: 100%;
+		max-width: calc(100% - 30px);
+		padding: 40px 30px;
+	}
+
+	.input:focus {
+		outline: none !important;
+	}
+
+	&::before {
+		position: absolute;
+		top: 15px;
+		left: -15px;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background-color: $tertiary;
+		border-radius: 10px;
+		mix-blend-mode: overlay;
+		content: "";
+
+		@include xs {
+			top: 10px;
+			left: -10px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0;
+		font-weight: 700;
+		font-size: 32px;
+		text-align: center;
+
+		@include xs {
+			font-size: 24px;
+		}
+	}
+
+	&__text {
+		max-width: 350px;
+		font-size: 22px;
+		text-align: center;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	&__policy {
+		max-width: 350px;
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	&__submit {
+		margin: 0 auto;
+	}
+}

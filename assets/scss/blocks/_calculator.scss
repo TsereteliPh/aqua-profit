@@ -1,7 +1,7 @@
 .calculator {
 	position: relative;
 	padding-bottom: 25px;
-	background: linear-gradient(90deg, #fff 0%, #fff 50%, #9f1521 50%, #9f1521 100%);
+	background: linear-gradient(90deg, #fff 0%, #fff 50%, $tertiary 50%, $tertiary 100%);
 
 	@include sm {
 		padding: 60px 0;

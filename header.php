@@ -53,7 +53,7 @@
 				<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $tel); ?>" class="header__tel"><?php echo $tel; ?></a>
 			<?php endif; ?>
 
-			<button class="btn header__advice" type="button">
+			<button class="btn header__advice" type="button" data-fancybox data-src="#callback">
 				<svg width="33" height="28"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-box"></use></svg>
 				<span>Заказать консультацию</span>
 			</button>
@@ -62,10 +62,10 @@
 </header>
 
 <div class="drop">
-	<div class="drop__cross">
+	<button class="drop__cross" type="button" aria-label="Закрыть меню">
 		<span></span>
 		<span></span>
-	</div>
+	</button>
 
 	<?php wp_nav_menu(array(
 		'theme_location' => 'menu_popup',

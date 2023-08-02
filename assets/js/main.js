@@ -120,7 +120,7 @@ function sendForm() {
 					setTimeout(function () {
 						Fancybox.show([
 							{
-								src: "#success",
+								src: "#application",
 								type: "inline",
 							},
 						]);
