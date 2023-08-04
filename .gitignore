@@ -3,6 +3,7 @@ build
 zip
 .idea
 .gulp
+sftp.json
 composer.lock
 bash.exe.stackdump
 *.rar
