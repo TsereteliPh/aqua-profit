@@ -16,11 +16,11 @@
 
 						<?php
 							if ( $service['img'] ) {
-								echo wp_get_attachment_image( $service['img'], 'medium', false, array(
+								echo wp_get_attachment_image( $service['img'], 'large', false, array(
 									'class' => 'services__img'
 								) );
 							} else {
-								echo wp_get_attachment_image( 107, 'medium', false, array(
+								echo wp_get_attachment_image( 107, 'large', false, array(
 									'class' => 'services__img'
 								) );
 							}

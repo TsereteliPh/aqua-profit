@@ -491,11 +491,6 @@ if (services) {
 				this.classList.add('active');
 				this.parentNode.classList.add('active');
 				accBtnTextChecker(this);
-
-				this.parentNode.scrollIntoView({
-					behavior: 'smooth',
-					block: 'center'
-				});
 			}
 		})
 	});

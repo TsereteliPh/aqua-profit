@@ -16,8 +16,8 @@
 	transition: $transition;
 
 	@include md {
-		top: 110px;
-		height: calc(100vh - 110px);
+		top: 90px;
+		height: calc(100vh - 90px);
 		box-shadow: 0 20px 20px 0 rgba(#000, 0.2);
 	}
 
@@ -120,6 +120,10 @@
 				text-transform: uppercase;
 				text-decoration: none;
 				transition: $transition;
+
+				@include xs {
+					padding: 20px 0;
+				}
 
 				&:hover {
 					color: $primary;

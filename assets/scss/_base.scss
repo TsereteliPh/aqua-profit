@@ -157,8 +157,12 @@ iframe {
 .main {
 	margin-top: 300px;
 
+	@include to(1500px) {
+		margin-top: 205px;
+	}
+
 	@include md {
-		margin-top: 150px;
+		margin-top: 120px;
 	}
 
 	@include xs {
@@ -167,6 +171,10 @@ iframe {
 
 	&--no-indent {
 		margin-top: 0;
+
+		@include to(1500px) {
+			margin-top: 0;
+		}
 
 		@include md {
 			margin-top: 0;

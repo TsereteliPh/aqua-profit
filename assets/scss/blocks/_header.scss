@@ -10,6 +10,10 @@
 	overflow: hidden;
 	background: url(assets/images/header-bg.jpg) no-repeat 50% 0 / auto;
 
+	@include to(1500px) {
+		min-height: 170px;
+	}
+
 	@include md {
 		min-height: auto;
 	}
@@ -75,7 +79,7 @@
 		}
 
 		.header__info {
-			padding-bottom: 25px;
+			padding-bottom: 15px;
 
 			@include xs {
 				padding-bottom: 0;
@@ -91,7 +95,8 @@
 		}
 
 		.header__link {
-			margin-left: 60px;
+			width: 100px;
+			margin-left: 80px;
 
 			@include md {
 				margin-left: 0;
@@ -158,6 +163,10 @@
 				text-decoration: none;
 				transition: $transition;
 
+				@include to(1500px) {
+					padding: 15px 0;
+				}
+
 				&:hover {
 					color: $primary;
 				}
@@ -217,8 +226,12 @@
 		align-items: center;
 		margin-top: 25px;
 
+		@include to(1500px) {
+			margin-top: 15px;
+		}
+
 		@include md {
-			padding-bottom: 25px;
+			padding-bottom: 15px;
 		}
 
 		@include xs {
@@ -368,6 +381,7 @@
 			position: absolute;
 			top: 40%;
 			left: 50%;
+			width: 100px;
 			margin-left: 0;
 			transform: translate(-50%, -50%);
 		}

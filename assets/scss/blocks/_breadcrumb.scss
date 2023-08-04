@@ -6,8 +6,12 @@
 	width: 100%;
 	height: fit-content;
 
+	@include to(1500px) {
+		top: 190px;
+	}
+
 	@include md {
-		top: 130px;
+		top: 105px;
 	}
 
 	@include xs {

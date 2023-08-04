@@ -8,7 +8,7 @@
 
 			<div class="stages__desc"><?php the_sub_field( 'desc' ); ?></div>
 
-			<button class="btn stages__button" type="button">Рассчитать стоимость работ</button>
+			<button class="btn stages__button" type="button" data-fancybox data-src="#callback">Рассчитать стоимость работ</button>
 		</div>
 
 		<?php
