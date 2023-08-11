@@ -80,7 +80,7 @@ if (!function_exists('adem_setup')) {
 			'menu_name' => 'Вопрос - ответ',
 		],
 		'public' => true,
-		'show_in_menu' => false,
+		'show_in_menu' => true,
 		'menu_position' => 23,
 		'menu_icon' => 'dashicons-editor-help',
 		'supports' => ['title'],

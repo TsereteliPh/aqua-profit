@@ -18,6 +18,7 @@ if (have_rows('blocks', $id)) {
 		else if (get_row_layout() == 'calculator') get_template_part('layouts/blocks/calculator/template');
 		else if (get_row_layout() == 'contacts') get_template_part('layouts/blocks/contacts/template');
 		else if (get_row_layout() == 'faq') get_template_part('layouts/blocks/faq/template');
+		else if (get_row_layout() == 'gallery') get_template_part('layouts/blocks/gallery/template', null, array('block_id' => $counters[$layout]));
 		else if (get_row_layout() == 'map') get_template_part('layouts/blocks/map/template');
 		else if (get_row_layout() == 'question') get_template_part('layouts/blocks/question/template');
 		else if (get_row_layout() == 'reviews-slider') get_template_part('layouts/blocks/reviews-slider/template');
