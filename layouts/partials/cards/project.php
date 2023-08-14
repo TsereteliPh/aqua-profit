@@ -1,5 +1,4 @@
 <?php
-	$area = get_field( 'area' );
 	$works = get_field( 'works_list' );
 	$size = ($args['iteration'] == 0) ? 'full' : 'large';
 ?>
@@ -17,7 +16,7 @@
 	?>
 
 	<div class="project-card__info">
-		<div class="project-card__label"><?php the_title(); echo ( $area ) ? ' - ' . $area . ' м²': ''; ?></div>
+		<div class="project-card__label"><?php the_title(); ?></div>
 
 		<div class="project-card__works">
 			<?php

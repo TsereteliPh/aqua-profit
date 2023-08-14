@@ -25,7 +25,7 @@
 			<div class="review-card__info">
 				<div class="review-card__name"><?php echo $title; ?></div>
 
-				<a href="<?php the_permalink(); ?>" class="review-card__label"><?php the_title(); echo ' - ' . get_field( 'area' ) . ' м²'; ?></a>
+				<a href="<?php the_permalink(); ?>" class="review-card__label"><?php the_title(); ?></a>
 
 				<div class="review-card__works">
 					<span>Выполненные работы:</span>

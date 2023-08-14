@@ -2,7 +2,6 @@
 
 <?php
 	$address = get_field( 'address' );
-	$area = get_field( 'area' );
 	$works = get_field( 'works_list' );
 	$worksText = get_field( 'works_text' );
 	$videos = get_field( 'video' );
@@ -10,7 +9,7 @@
 ?>
 <section class="project">
 	<div class="container">
-		<h1 class="title project__title"><?php the_title(); echo ' - ' . $area . ' м²'; ?></h1>
+		<h1 class="title project__title"><?php the_title(); ?></h1>
 	</div>
 
 	<?php

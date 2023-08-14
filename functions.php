@@ -53,7 +53,7 @@ if (!function_exists('adem_setup')) {
 			'menu_name' => 'Отзывы',
 		],
 		'public' => true,
-		'show_in_menu' => false,
+		'show_in_menu' => true,
 		'menu_position' => 22,
 		'menu_icon' => 'dashicons-format-chat',
 		'supports' => ['title'],

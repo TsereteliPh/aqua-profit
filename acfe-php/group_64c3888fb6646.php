@@ -20,7 +20,7 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'message' => 'В заголовке проекта указывается район или название ЖК/СНТ выполненного объекта. Также необходимо выбрать миниатюру проекта (featured image) - справа. Изображение должно быть хорошего качества и разрешения.',
+			'message' => 'В заголовке проекта указывается район или название ЖК/СНТ выполненного объекта плюс площадь. Также необходимо выбрать миниатюру проекта (featured image) - справа. Изображение должно быть хорошего качества и разрешения.',
 			'new_lines' => 'wpautop',
 			'esc_html' => 0,
 			'acfe_field_group_condition' => 0,
@@ -35,7 +35,7 @@ acf_add_local_field_group(array(
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '80',
+				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
@@ -45,30 +45,6 @@ acf_add_local_field_group(array(
 			'placeholder' => '',
 			'prepend' => '',
 			'append' => '',
-			'acfe_field_group_condition' => 0,
-		),
-		array(
-			'key' => 'field_64c3899ec99d6',
-			'label' => 'Площадь',
-			'name' => 'area',
-			'aria-label' => '',
-			'type' => 'number',
-			'instructions' => '',
-			'required' => 1,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '20',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'required_message' => '',
-			'min' => '',
-			'max' => '',
-			'placeholder' => '',
-			'step' => '',
-			'prepend' => '',
-			'append' => 'м²',
 			'acfe_field_group_condition' => 0,
 		),
 		array(
@@ -392,7 +368,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1690898436,
+	'modified' => 1691995866,
 ));
 
 endif;
