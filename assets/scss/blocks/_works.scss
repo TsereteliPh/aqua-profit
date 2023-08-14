@@ -42,22 +42,12 @@
 
 	&__list {
 		display: grid;
-		grid-auto-rows: 540px;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 25px 30px;
 		margin-top: 45px;
 
-		@include lg {
-			grid-auto-rows: calc(25vw + 220px);
-		}
-
 		@include md {
-			grid-auto-rows: calc(30vw + 220px);
 			grid-template-columns: 1fr 1fr;
-		}
-
-		@include sm {
-			grid-auto-rows: minmax(calc(35vw + 220px), auto);
 		}
 
 		@include xs {
@@ -99,25 +89,35 @@
 				}
 			}
 
+			.project-card__img {
+				aspect-ratio: 2/1;
+
+				@include sm {
+					aspect-ratio: 4/3;
+				}
+			}
+
 			.project-card__info {
 				position: absolute;
-				right: 30px;
+				right: 25px;
 				bottom: 25px;
+				max-width: 60%;
 				min-height: auto;
 				background-color: rgba(#fff, 0.8);
 
-				@include md {
-					max-width: 40%;
+				@include lg {
+					max-width: 80%;
 				}
 
-				@include sm {
-					max-width: 60%;
+				@include md {
+					right: 20px;
+					bottom: 20px;
+					max-width: calc(100% - 40px);
 				}
 
 				@include xs {
 					position: static;
 					max-width: none;
-					min-height: 40%;
 					background-color: #fff;
 				}
 			}

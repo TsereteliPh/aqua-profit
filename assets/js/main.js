@@ -272,24 +272,20 @@ if (worksCarousel) {
 			992: {
 				slidesPerView: 3,
 				centeredSlides: false,
-				loop: true,
-				autoHeight: false,
+				loop: true
 			},
 			769: {
 				slidesPerView: 2,
-				centeredSlides: false,
-				autoHeight: false,
+				centeredSlides: false
 			},
 			577: {
-				centeredSlides: false,
-				autoHeight: false,
+				centeredSlides: false
 			},
 		},
 		slidesPerView: "auto",
 		centeredSlides: true,
 		spaceBetween: 25,
-		loop: false,
-		autoHeight: true,
+		loop: false
 	});
 }
 
