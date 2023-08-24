@@ -66,7 +66,7 @@
 				<?php if ($map_arr) : ?>
 					const map = new ymaps.Map('map', {
 						center: [52.606917388514404, 39.59868261630403],
-						zoom: 13
+						zoom: 8
 					});
 
 					<?php foreach ( $map_arr as $mark ) : ?>
