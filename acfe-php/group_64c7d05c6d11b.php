@@ -26,7 +26,7 @@ acf_add_local_field_group(array(
 			'acfe_field_group_condition' => 0,
 		),
 		array(
-			'key' => 'field_64d9e2359bd8e',
+			'key' => 'field_64e8aba03e22f',
 			'label' => 'Отзыв на проект?',
 			'name' => 'is_project',
 			'aria-label' => '',
@@ -96,17 +96,9 @@ acf_add_local_field_group(array(
 			'name' => 'review_img',
 			'aria-label' => '',
 			'type' => 'image',
-			'instructions' => '',
+			'instructions' => 'Если поле не заполнено - будет использована фотография (миниатюра) проекта или заглушка.',
 			'required' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_64d9e2359bd8e',
-						'operator' => '!=',
-						'value' => '1',
-					),
-				),
-			),
+			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '40',
 				'class' => '',
@@ -114,7 +106,7 @@ acf_add_local_field_group(array(
 			),
 			'uploader' => '',
 			'acfe_thumbnail' => 0,
-			'return_format' => 'id',
+			'return_format' => 'array',
 			'min_width' => '',
 			'min_height' => '',
 			'min_size' => '',
@@ -137,7 +129,7 @@ acf_add_local_field_group(array(
 			'conditional_logic' => array(
 				array(
 					array(
-						'field' => 'field_64d9e2359bd8e',
+						'field' => 'field_64e8aba03e22f',
 						'operator' => '!=',
 						'value' => '1',
 					),
@@ -230,7 +222,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1692001051,
+	'modified' => 1692970057,
 ));
 
 endif;
