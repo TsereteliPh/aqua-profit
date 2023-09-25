@@ -1,46 +1,5 @@
-<?php
-	$map_arr = [];
-	$args = [
-		'post_type' => 'project',
-		'meta_key' => 'location'
-	];
+<?php $coords = get_sub_field('location'); ?>
 
-	$query = new WP_Query($args);
-	$posts = $query->posts;
-
-	if ( $query->have_posts() ) {
-		if (is_archive()) {
-			foreach ($posts as $post) {
-				$location = json_decode( get_field( 'location' ), true );
-				$mark = $location['marks'][0];
-
-				$coords = array(
-					'latitude' => $mark['coords'][0],
-					'longitude' => $mark['coords'][1],
-					'content' => $mark['content']
-				);
-
-				array_push( $map_arr, $coords);
-			}
-		} else {
-			while ( $query->have_posts() ) {
-				$query->the_post();
-				$location = json_decode( get_field( 'location' ), true );
-				$mark = $location['marks'][0];
-
-				$coords = array(
-					'latitude' => $mark['coords'][0],
-					'longitude' => $mark['coords'][1],
-					'content' => $mark['content']
-				);
-
-				array_push( $map_arr, $coords);
-			}
-
-			wp_reset_postdata();
-		}
-	}
-?>
 <section class="map">
 	<div class="container map__container">
 		<?php get_template_part( '/layouts/partials/title', null, array(
@@ -49,7 +8,7 @@
 		) ); ?>
 
 		<div class="map__done">
-			<?php $count = count($map_arr); ?>
+			<?php $count = count($coords); ?>
 
 			<div class="map__count"><?php echo $count; ?></div>
 
@@ -63,13 +22,13 @@
 	<script>
 		document.addEventListener("DOMContentLoaded", function (e) {
 			function init(){
-				<?php if ($map_arr) : ?>
+				<?php if ($coords) : ?>
 					const map = new ymaps.Map('map', {
 						center: [52.606917388514404, 39.59868261630403],
 						zoom: 8
 					});
 
-					<?php foreach ( $map_arr as $mark ) : ?>
+					<?php foreach ( $coords as $mark ) : ?>
 						map.geoObjects.add(
 							new ymaps.Placemark([<?php echo $mark['latitude']; ?>, <?php echo $mark['longitude']; ?>], {
 									balloonContent: '<?php echo $mark['content'] ?>'

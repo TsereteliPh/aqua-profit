@@ -1,5 +1,6 @@
 <?php
 	$works = get_field( 'works_list' );
+	$desc = get_field( 'works_desc' );
 	$size = ($args['iteration'] == 0) ? 'full' : 'large';
 ?>
 <li class="project-card <?php echo $args['class']; echo ( $args['iteration'] == 0 ) ? ' works__item--new' : ''; ?>">
@@ -20,10 +21,14 @@
 
 		<div class="project-card__works">
 			<?php
-				$worksCount = count($works);
+				if ( $desc ) {
+					echo $desc;
+				} else {
+					$worksCount = count($works);
 
-				foreach ( $works as $key => $work ) {
-					echo $work['text']; echo ( ($key + 1) != $worksCount ) ? ', ' : '.';
+					foreach ( $works as $key => $work ) {
+						echo $work['text']; echo ( ($key + 1) != $worksCount ) ? ', ' : '.';
+					}
 				}
 			?>
 		</div>

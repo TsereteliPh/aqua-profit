@@ -272,7 +272,6 @@ if (worksCarousel) {
 			992: {
 				slidesPerView: 3,
 				centeredSlides: false,
-				loop: true
 			},
 			769: {
 				slidesPerView: 2,
@@ -285,7 +284,6 @@ if (worksCarousel) {
 		slidesPerView: "auto",
 		centeredSlides: true,
 		spaceBetween: 25,
-		loop: false
 	});
 }
 

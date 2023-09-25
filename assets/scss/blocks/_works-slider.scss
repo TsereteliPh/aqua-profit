@@ -14,48 +14,6 @@
 			width: 100%;
 			max-width: 360px;
 		}
-
-		&.swiper-slide-active {
-			position: relative;
-			min-width: 600px;
-			transition: $transition;
-
-			@include md {
-				min-width: auto;
-				transition: none;
-			}
-
-			.project-card__img {
-				height: 100%;
-				aspect-ratio: auto;
-
-				@include md {
-					height: auto;
-					aspect-ratio: 4/3;
-				}
-			}
-
-			.project-card__info {
-				position: absolute;
-				bottom: 0;
-				left: 20px;
-				width: calc(100% - 40px);
-				padding: 20px 50px;
-				background-color: rgba(#fff, 0.8);
-				transition: $transition;
-
-				@include md {
-					position: static;
-					width: 100%;
-					padding: 25px 20px;
-					transition: none;
-				}
-
-				@include sm {
-					padding: 25px 15px;
-				}
-			}
-		}
 	}
 
 	&__panel {

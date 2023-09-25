@@ -27,7 +27,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_64c38966c99d5',
-			'label' => 'Точный адрес объекста',
+			'label' => 'Точный адрес объекта',
 			'name' => 'address',
 			'aria-label' => '',
 			'type' => 'text',
@@ -95,6 +95,28 @@ acf_add_local_field_group(array(
 					'parent_repeater' => 'field_64c38a51c99d7',
 				),
 			),
+		),
+		array(
+			'key' => 'field_651168ebff030',
+			'label' => 'Описание объекта',
+			'name' => 'works_desc',
+			'aria-label' => '',
+			'type' => 'textarea',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'acfe_textarea_code' => 0,
+			'maxlength' => '',
+			'rows' => 3,
+			'placeholder' => '',
+			'new_lines' => '',
+			'acfe_field_group_condition' => 0,
 		),
 		array(
 			'key' => 'field_64c38ac9c99d9',
@@ -321,27 +343,6 @@ acf_add_local_field_group(array(
 			'preview_size' => 'medium',
 			'acfe_field_group_condition' => 0,
 		),
-		array(
-			'key' => 'field_64c8e846c59b1',
-			'label' => 'Местоположение на карте',
-			'name' => 'location',
-			'aria-label' => '',
-			'type' => 'yandex-map',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'height' => 400,
-			'map_type' => 'map',
-			'zoom' => 13,
-			'center_lat' => '52.59755023463247',
-			'center_lng' => '39.60875554633794',
-			'acfe_field_group_condition' => 0,
-		),
 	),
 	'location' => array(
 		array(
@@ -368,7 +369,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1691995866,
+	'modified' => 1695640005,
 ));
 
 endif;
