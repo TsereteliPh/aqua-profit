@@ -27,6 +27,7 @@ if (have_rows('blocks', $id)) {
 		else if (get_row_layout() == 'services') get_template_part('layouts/blocks/services/template');
 		else if (get_row_layout() == 'services-links') get_template_part('layouts/blocks/services-links/template');
 		else if (get_row_layout() == 'stages') get_template_part('layouts/blocks/stages/template');
+		else if (get_row_layout() == 'tabs') get_template_part('layouts/blocks/tabs/template');
 		else if (get_row_layout() == 'text') get_template_part('layouts/blocks/text/template');
 		else if (get_row_layout() == 'works') get_template_part('layouts/blocks/works/template');
 		else if (get_row_layout() == 'works-slider') get_template_part('layouts/blocks/works-slider/template');
