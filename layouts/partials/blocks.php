@@ -15,6 +15,7 @@ if (have_rows('blocks', $id)) {
 
 		if (get_row_layout() == 'about') get_template_part('layouts/blocks/about/template');
 		else if (get_row_layout() == 'advantages') get_template_part('layouts/blocks/advantages/template');
+		else if (get_row_layout() == 'bg-text') get_template_part('layouts/blocks/bg-text/template');
 		else if (get_row_layout() == 'calculator') get_template_part('layouts/blocks/calculator/template');
 		else if (get_row_layout() == 'contacts') get_template_part('layouts/blocks/contacts/template');
 		else if (get_row_layout() == 'faq') get_template_part('layouts/blocks/faq/template');
