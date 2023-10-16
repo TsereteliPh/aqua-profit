@@ -10,7 +10,17 @@ function change_toolbar($args)
 			'classes' => 'article-ul',
 		],
 		[
+			'title' => 'Ненумерованный список с галочками',
+			'selector' => 'ul',
+			'classes' => 'st-ul',
+		],
+		[
 			'title' => 'Нумерованный список',
+			'selector' => 'ol',
+			'classes' => 'article-ol',
+		],
+		[
+			'title' => 'Ненумерованный список с галочками',
 			'selector' => 'ol',
 			'classes' => 'article-ol',
 		],

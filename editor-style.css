@@ -1,3 +1,24 @@
+.st-ul {
+	padding: 0;
+}
+
+.st-ul li {
+	position: relative;
+	padding: 10px 0 0 40px;
+	list-style: none;
+}
+
+.st-ul li::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 30px;
+	height: auto;
+	aspect-ratio: 1/1;
+	background: url(assets/images/list-marker.png) no-repeat 50% / cover;
+	content: "";
+}
+
 .st-hypten {
 	position: relative;
 	margin-top: 40px;
