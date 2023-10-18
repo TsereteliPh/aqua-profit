@@ -18,7 +18,15 @@
 		?>
 			<ul class="reset-list tabs__list js-tabs">
 				<?php foreach ( $tabs as $key => $tab ) : ?>
-					<li class="tabs__item<?php echo ( $key == 0 ) ? ' active' : ''; ?>" data-tab="tab-<?php echo $key + 1; ?>"><?php echo $key + 1; ?></li>
+					<li class="tabs__item<?php echo ( $key == 0 ) ? ' active' : ''; ?>" data-tab="tab-<?php echo $key + 1; ?>">
+						<?php
+							if ( $tab['label'] ) {
+								echo $tab['label'];
+							} else {
+								echo $key + 1;
+							}
+						?>
+					</li>
 				<?php endforeach; ?>
 			</ul>
 

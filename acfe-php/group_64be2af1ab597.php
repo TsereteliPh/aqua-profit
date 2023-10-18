@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 if( function_exists('acf_add_local_field_group') ):
 
@@ -122,7 +122,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'acfe_repeater_stylised_button' => 0,
-			'layout' => 'table',
+			'layout' => 'block',
 			'pagination' => 0,
 			'min' => 0,
 			'max' => 0,
@@ -131,6 +131,28 @@ acf_add_local_field_group(array(
 			'acfe_field_group_condition' => 0,
 			'rows_per_page' => 20,
 			'sub_fields' => array(
+				array(
+					'key' => 'field_652fc71484e44',
+					'label' => 'Название вкладки',
+					'name' => 'label',
+					'aria-label' => '',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'acfe_field_group_condition' => 0,
+					'parent_repeater' => 'field_652cf81e4346e',
+				),
 				array(
 					'key' => 'field_652cf82c4346f',
 					'label' => 'Текст',
@@ -197,7 +219,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1697446790,
+	'modified' => 1697630023,
 ));
 
 endif;
