@@ -1,14 +1,14 @@
-.st-ul {
+.st-ul-check {
 	padding: 0;
 }
 
-.st-ul li {
+.st-ul-check li {
 	position: relative;
 	padding: 10px 0 0 40px;
 	list-style: none;
 }
 
-.st-ul li::before {
+.st-ul-check li::before {
 	position: absolute;
 	top: 0;
 	left: 0;
