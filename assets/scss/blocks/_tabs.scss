@@ -23,6 +23,13 @@
 		display: flex;
 		margin-top: 50px;
 		border-bottom: 1px solid #bbb;
+
+		@include sm {
+			flex-wrap: wrap;
+			gap: 15px;
+			justify-content: center;
+			border: none;
+		}
 	}
 
 	&__item {
@@ -35,12 +42,21 @@
 		cursor: pointer;
 		transition: $transition;
 
-		@include md {
-			max-width: 160px;
+		@include sm {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: fit-content;
+			margin-bottom: 0;
+			padding: 10px 20px;
+			border: 1px solid $accent;
+			border-radius: 10px;
 		}
 
 		&.active {
-			border-bottom: 1px solid $accent;
+			color: #fff;
+			border: none;
+			@include ui-gradient(90deg);
 		}
 	}
 
