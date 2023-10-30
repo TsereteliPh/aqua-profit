@@ -54,15 +54,23 @@
 		}
 
 		&.active {
-			color: #fff;
-			border: none;
-			@include ui-gradient(90deg);
+			border-bottom: 1px solid $accent;
+
+			@include sm {
+				color: #fff;
+				border: none;
+				@include ui-gradient(90deg);
+			}
 		}
 	}
 
 	&__wrapper {
 		display: none;
 		margin-top: 60px;
+
+		@include sm {
+			margin-top: 40px;
+		}
 
 		&.active {
 			display: block;
