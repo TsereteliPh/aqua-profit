@@ -6,14 +6,14 @@
     }
 ?>
 <div class="modals application" id="application">
-	<h2 class="modals__title">Заявка отправлена!</h2>
+	<div class="modals__title">Заявка отправлена!</div>
 
 	<div class="modals__text">Наш менеджер свяжется с Вами в ближайшее время</div>
 </div>
 
 <div class="modals callback" id="callback">
 	<div class="modals__wrapper">
-		<h2 class="modals__title">Заказать звонок</h2>
+		<div class="modals__title">Заказать звонок</div>
 
 		<form method="POST" class="modals__form" name="Звонок">
 			<?php wp_nonce_field( 'Звонок', 'callback_input' ); ?>
