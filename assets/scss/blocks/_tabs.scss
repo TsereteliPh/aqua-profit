@@ -65,11 +65,18 @@
 	}
 
 	&__wrapper {
+		position: relative;
 		display: none;
 		margin-top: 60px;
 
 		@include sm {
 			margin-top: 40px;
+		}
+
+		&::after {
+			display: block;
+			clear: both;
+			content: "";
 		}
 
 		&.active {
